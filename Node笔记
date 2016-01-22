@@ -1,4 +1,5 @@
 cmd进入c盘：c:
+创建文件夹命令：mkdir myapp，创建一个myapp文件夹，然后cd myapp进入此文件夹
 
 安装Express,步骤：
 1.官网http://expressjs.com/，express4.X的有一些变化，4.x版本中将命令工具单独分出来了(https://github.com/expressjs/generator),
@@ -22,4 +23,6 @@ cmd命令：
  浏览器中输入 http://你的IP:3000 如：127.0.0.1:3000
 5.停止项目
 cmd命令：Ctrl+c按2次
+ 
+ 
  
