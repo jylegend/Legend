@@ -1,0 +1,25 @@
+cmd进入c盘：c:
+
+安装Express,步骤：
+1.官网http://expressjs.com/，express4.X的有一些变化，4.x版本中将命令工具单独分出来了(https://github.com/expressjs/generator),
+所有要先按装express-generator，否则创建项目时，会提示express命令没找到。
+cmd命令：
+   01：npm install -g express-generator #需先安装express-generator
+   02：npm install -g express 
+   03：express -V  #验证是否安装成功
+2.创建项目
+cmd命令：
+   01：express myfirstexpress # express的默认模版采用jade，若需要ejs模版支持，加上-e选项，即 express -e myfirstexpress 
+   02：cd myfirstexpress
+3：运行项目
+ cmd命令：
+  01：npm install #需要等待一段时间，因为需要获取很多的库文件 
+  02：npm start  
+  输出：
+  > myfirstexpress@0.0.1 start /root/myfirstexpress  
+  > node ./bin/www
+4：查看
+ 浏览器中输入 http://你的IP:3000 如：127.0.0.1:3000
+5.停止项目
+cmd命令：Ctrl+c按2次
+ 
