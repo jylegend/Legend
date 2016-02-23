@@ -1,0 +1,173 @@
+手机浏览器打开微信：href="javascript:window.location.href='weixin://'"
+微信公众号api：http://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html
+
+css currentColor:是 color 属性的值，具体意思是指：currentColor关键字的使用值是 color 属性值的计算值。
+
+css 动态加载效果demo：
+<style type="text/css">
+        .btn {
+            display: inline-block;
+            padding: 0.25em 1.25em;
+            border: 1px solid;
+            border-radius: 2px;
+            vertical-align: bottom;
+            font-weight: inherit;
+            border-color: #208000 #1F7F00;
+            background-color: #289600;
+            box-shadow: inset 0 0 1px rgba(255,255,255,.6), 0 1px #8DBF62;
+            color: #fff;
+            text-shadow: 0 -1px #137900;
+        }
+        .doted {
+            display: inline-block;
+            min-width: 2px;
+            min-height: 2px;
+            background-clip: content-box;
+            box-shadow: 2px 0 currentColor, 6px 0 currentColor, 10px 0 currentColor; 
+            animation: dot 4s infinite step-start both;
+            *zoom: expression(this.innerHtml='...');/*兼容IE7*/
+        }
+
+            .doted:before {
+                content: '...';
+            }
+
+            .doted::before {
+                content: '';
+            }
+
+        :root .doted {
+            margin-right: 8px;
+        }
+
+        @-webkit-keyframes dot {
+            25% {
+                box-shadow: none;
+            }
+
+            50% {
+                box-shadow: 2px 0 currentColor;
+            }
+
+            75% {
+                box-shadow: 2px 0 currentColor, 6px 0 currentColor;
+            }
+        }
+
+        @keyframes dot {
+            25% {
+                box-shadow: none;
+            }
+
+            50% {
+                box-shadow: 2px 0 currentColor;
+            }
+
+            75% {
+                box-shadow: 2px 0 currentColor, 6px 0 currentColor;
+            }
+        }
+    </style>
+
+px像素（Pixel）。相对长度单位。像素px是相对于显示器屏幕分辨率而言的。
+
+em是相对长度单位。相对于当前对象内文本的字体尺寸。如当前对行内文本的字体尺寸未被人为设置，则相对于浏览器的默认字体尺寸。
+
+为了简化font-size的换算，需要在css中的body选择器中声明Font-size=62.5%，这就使em值变为 16px*62.5%=10px, 这样12px=1.2em, 10px=1em, 也就是说只需要将你的原来的px数值除以10，然后换上em作为单位就行了。
+
+document.getElementById('div').innerText = '哈哈';
+
+canvas 制作小球弹跳 仿自由落体 
+
+1.关键字：requestAnimationFrame 
+
+这个方法原理其实也就跟setTimeout/setInterval差不多，通过递归调用同一方法来不断更新画面以达到动起来的效果，但它优于setTimeout/setInterval的地方在于它是由浏览器专门为动画提供的API，在运行时浏览器会自动优化方法的调用，并且如果页面不是激活状
+态下的话，动画会自动暂停，有效节省了CPU开销。
+
+2.调用方法：requestAnimationFrame(callback)//callback为回调函数
+
+3.demo演示
+
+//小球弹跳
+var cv = document.getElementById("canvas");
+var ctx = cv.getContext("2d");
+var turnCount = 0;
+var handle;
+var img = new Image();
+img.src = '{{path}}/images/page/38day/tlms.png';//填充的图片路径
+var ball = {
+            x: 200 - img.width / 2,//初始横坐标
+            y: 0,              //初始纵坐标
+            g: 0.25,           //重力加速度
+            vy: 0,             //水平速度
+            count: 5,           //弹跳次数
+            draw: function () {
+                ctx.beginPath();
+                ctx.drawImage(img, this.x, this.y);
+                ctx.closePath();
+            }
+        };
+ //小球下落逻辑
+        function draw() {
+            ctx.clearRect(0, 0, cv.width, cv.height);
+            ball.draw();
+            ball.y += ball.vy; //计算小球下落的y轴距离
+            ball.vy += ball.g; //计算小球下落的速度
+            if (ball.y >= cv.height - img.height) {//小球下落的y轴距离大于等于画布的长度减去当前小球的宽度，说明此时小球刚刚碰到地面，忽略地面陷入。
+                ball.y = cv.height - img.height;//重新计算小球的y轴距离
+                ball.vy = -ball.vy * 0.5;       //模拟反弹效果，小球速度应该是慢慢减少
+                turnCount++;                    //记录小球反弹的次数
+            }
+            if (turnCount > ball.count) {
+                return;
+            }
+            handle = window.requestAnimationFrame(draw);
+            //或者requestAnimationFrame(draw);
+        }
+
+4.兼容各个浏览器代码：
+ //兼容各个浏览器逻辑
+        function Api() {
+            var lastTime = 0;
+            var prefixes = 'webkit moz ms o'.split(' '); //各浏览器前缀
+
+            var requestAnimationFrame = window.requestAnimationFrame;
+            var cancelAnimationFrame = window.cancelAnimationFrame;
+
+            var prefix;
+            //通过遍历各浏览器前缀，来得到requestAnimationFrame和cancelAnimationFrame在当前浏览器的实现形式
+            for (var i = 0; i < prefixes.length; i++) {
+                if (requestAnimationFrame && cancelAnimationFrame) {
+                    break;
+                }
+                prefix = prefixes[i];
+                requestAnimationFrame = requestAnimationFrame || window[prefix + 'RequestAnimationFrame'];
+                cancelAnimationFrame = cancelAnimationFrame || window[prefix + 'CancelAnimationFrame'] || window[prefix + 'CancelRequestAnimationFrame'];
+            }
+
+            //如果当前浏览器不支持requestAnimationFrame和cancelAnimationFrame，则会退到setTimeout
+            if (!requestAnimationFrame || !cancelAnimationFrame) {
+                requestAnimationFrame = function (callback, element) {
+                    var currTime = new Date().getTime();
+                    //为了使setTimteout的尽可能的接近每秒60帧的效果
+                    var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+                    var id = window.setTimeout(function () {
+                        callback(currTime + timeToCall);
+                    }, timeToCall);
+                    lastTime = currTime + timeToCall;
+                    return id;
+                };
+
+                cancelAnimationFrame = function (id) {
+                    window.clearTimeout(id);
+                };
+            }
+
+            //得到兼容各浏览器的API
+            window.requestAnimationFrame = requestAnimationFrame;
+            window.cancelAnimationFrame = cancelAnimationFrame;
+
+            draw();
+        }
+
+
