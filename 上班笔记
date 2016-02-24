@@ -171,3 +171,7 @@ var ball = {
         }
 
 
+在页面添加location.hash可实现无论哪个页面跳到该页面都跳到固定位置。
+<script language="javascript">  
+        location.hash="#navBar";  //指定锚点
+</script>
