@@ -194,3 +194,7 @@ function preImage(url, callback) {
 
 sublime2 加入汉化包：运行软件，依次点击菜单Preferneces -> Browse Packages ，在打开的目录的父目录中有一个Packages，
 把下载下来的压缩包中的Default文件夹放到那里面就可以了。
+
+//创建正则表达式：参考http://www.w3school.com.cn/jsref/jsref_obj_regexp.asp
+var reg = new RegExp(/^([a-z]+)\s([0-9]{4})$/);
+reg.test(/**/);
