@@ -1,4 +1,4 @@
-手机浏览器打开微信：href="javascript:window.location.href='weixin://'"
+﻿手机浏览器打开微信：href="javascript:window.location.href='weixin://'"
 微信公众号api：http://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html
 
 css currentColor:是 color 属性的值，具体意思是指：currentColor关键字的使用值是 color 属性值的计算值。
@@ -198,3 +198,5 @@ sublime2 加入汉化包：运行软件，依次点击菜单Preferneces -> Brows
 //创建正则表达式：参考http://www.w3school.com.cn/jsref/jsref_obj_regexp.asp
 var reg = new RegExp(/^([a-z]+)\s([0-9]{4})$/);
 reg.test(/**/);
+
+各种css3按钮效果：http://www.shejidaren.com/css-hover-style.html
