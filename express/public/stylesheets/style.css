@@ -1,0 +1,27 @@
+body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form, fieldset, input, textarea, blockquote {
+	margin: 0; padding: 0; border: 0;
+}
+
+body{
+	position: relative;
+	margin:0;
+	font-family:  arial,"Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 1.2em;
+	color: #555;
+	background-color: #eee;
+	overflow-x:hidden;
+	
+}
+.error{
+	position: relative;
+	padding: 0;
+	margin:0;
+	height: 445px;
+	background-color: #E2E1E6;
+}
+.error .imgs{
+	position: absolute;
+	margin-left:400px;
+	width:600px;
+	height: 100%;
+}

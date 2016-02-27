@@ -1,0 +1,95 @@
+.footer-free{
+	content: '';
+	position: relative;
+	width: 100%;
+	height:1000px;
+	background-color: #eee;
+}
+
+.footer{
+	width: 100%;
+	height: 250px;
+	position: relative;
+	padding: 0 auto;
+	margin: 0 auto;
+	background-color: #373636;
+
+	color:#eee;
+}
+.foo{
+	
+	position: absolute;
+	/*width:100px;
+	height: 200px;*/
+	
+}
+.foo>h3
+{
+	font-size: 16px;
+	color: rgba(255, 255, 255, 0.95);
+	font-weight: normal;
+	padding:0 auto;
+	margin-bottom: 10px;
+}
+.foo > ul{
+	position: relative;
+}
+.foo>p{
+	font-size: 14px;
+	color: rgba(255, 255, 255, 0.45);
+	padding:0 auto;
+	margin-bottom: 10px;
+}
+
+.foo-details{
+	width: 500px;
+	height: 200px;
+	padding-left:20px;
+	padding-top: 15px;
+	padding-right: 15px;
+	text-align: left;
+}
+.foo-menu{
+	margin-left:560px;
+	padding-top: 15px;
+}
+.foo-links{
+	margin-left:720px;
+	padding-top: 15px;
+	
+}
+.foo-play{
+	margin-left:880px;
+	padding-top: 15px;
+	
+}
+.foo-contact{
+	width: 200px;
+	margin-left:1040px;
+	padding-top: 15px;
+}
+.foo-contact>img{
+	width: 195px;
+	height: 115px;
+	border-radius: 50%;
+}
+/*尾部的li元素样式*/
+.foo-nav
+{
+	padding-bottom: 10px;
+	display: block;
+	font-size: 14px;
+	line-height: 20px;
+	float: none;
+}
+.foo-nav>a{
+	display: block;
+	line-height: 20px;
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.45);
+}
+.foo-nav>a:hover{
+	text-decoration: underline;
+	color: rgba(255, 255, 255, 0.85);
+}
+.foo-nav:hover{color: rgba(255, 255, 255, 0.85);}
