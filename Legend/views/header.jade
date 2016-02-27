@@ -1,0 +1,30 @@
+//通用头部样式
+doctype html
+html
+  head
+    title=title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/header.css')
+  body 
+   .main
+    .head
+        a(href='javascript:').choice Choice美在于心
+        ul.top-ul
+          li
+            a(href='/',data-text='Home').btn.btn-main 
+              span 主  页
+          li
+            a(href='/users',data-text='Technology').btn.btn-Technology
+              span 技术宅
+          li
+            a(href='/books',data-text='Library').btn.btn-Library
+               span 书呆子
+          li
+            a(href='/games').btn游戏控
+          li
+            a(href='/resource').btn资源库
+          li
+            a(href='/about').btn关于作者
+
+   script( type="text/javascript" ,src='http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js' )
+block content

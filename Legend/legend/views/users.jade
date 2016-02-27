@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title=title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/users.css')
+  body
+      .head
+        ul
+          li.btn
+            a(href='/')主页
+          li.btn
+            a(href='/users')个人中心
+          li.btn
+            a(href='/help')帮助
+          li.btn
+            a(href='/more')更多...
+      .list      
+        ul.control
+          li.games
+            img(src='/images/1.jpg')
+          li.games
+            img(src='/images/2.jpg') 
+          li.games
+            img(src='/images/3.jpg')  
+   
+
+   script( type="text/javascript" ,src='http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js' )
+block content
