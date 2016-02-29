@@ -13,11 +13,17 @@ git创建本地git仓库
 命令：mkdir Git
 cd Git
 初始化git仓库：git init
-git remote -v 查看当前目录下是否有远程仓库
+查看当前目录下是否有远程仓库:git remote -v 
 没有则创建一个：git remote add origin https://github.com/18016022862/Legend.git
 拷贝远程的代码到本地：git clone https://github.com/18016022862/Legend.git
 
 将本地代码提交到远程服务器：git push origin master
 
+不登陆远程直接本地操作
+1. git init
+2. git add .
+3. git commit -am "###"      -------以上3步只是本地提交
+4.git remote add origin git@xx.xx.xx.xx:repos/xxx/xxx/xxx.git
+5.git push origin 本地分支:远程分支
 
 
