@@ -90,6 +90,9 @@ nodejs 使用非阻塞式I/O(异步式I/O)针对所有的I/O操作不采用阻�
  require： 用于从外部获取一个模块的接口，即所获取模块的 exports 对象。
 
 安装node-inspector 调试工具,安装命令：npm install -g node-inspector
+
+
+2016.2.29
  
  
  
