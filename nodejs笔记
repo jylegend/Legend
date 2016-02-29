@@ -91,7 +91,7 @@ nodejs 使用非阻塞式I/O(异步式I/O)针对所有的I/O操作不采用阻�
 
 安装node-inspector 调试工具,安装命令：npm install -g node-inspector
 
-
+nodejs教程：http://ourjs.com/detail/529ca5950cb6498814000005
  
  
  
