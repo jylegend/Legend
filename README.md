@@ -23,7 +23,7 @@ cd Git
 1. git init
 2. git add .
 3. git commit -am "###"      -------以上3步只是本地提交
-4.git remote add origin git@xx.xx.xx.xx:repos/xxx/xxx/xxx.git
+4.git remote add origin https://github.com/18016022862/Legend.git
 5.git push origin 本地分支:远程分支
 
 
