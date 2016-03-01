@@ -2,7 +2,7 @@
 	content: '';
 	position: relative;
 	width: 100%;
-	height:1000px;
+	height:10px;
 	background-color: #eee;
 }
 
@@ -15,10 +15,18 @@
 	background-color: #373636;
 
 	color:#eee;
+
+}
+
+.footer-menu{
+	width: 1100px;
+	margin: 0 auto;
+	position: inherit;
 }
 .foo{
 	
 	position: absolute;
+	padding-top: 15px;
 	/*width:100px;
 	height: 200px;*/
 	
@@ -44,29 +52,24 @@
 .foo-details{
 	width: 500px;
 	height: 200px;
-	padding-left:20px;
-	padding-top: 15px;
-	padding-right: 15px;
 	text-align: left;
 }
 .foo-menu{
-	margin-left:560px;
-	padding-top: 15px;
+	margin-left:50%;
 }
 .foo-links{
-	margin-left:720px;
-	padding-top: 15px;
-	
+	margin-left:58.2%;
 }
 .foo-play{
-	margin-left:880px;
-	padding-top: 15px;
+	margin-left:66.4%;
+	
 	
 }
 .foo-contact{
 	width: 200px;
-	margin-left:1040px;
-	padding-top: 15px;
+	
+	margin-left: 900px;
+	
 }
 .foo-contact>img{
 	width: 195px;

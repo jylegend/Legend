@@ -14,14 +14,19 @@ body{
 }
 .error{
 	position: relative;
-	padding: 0;
+	padding: 10px 0 0;
 	margin:0;
 	height: 445px;
 	background-color: #E2E1E6;
 }
+.error-main
+{
+	width: 600px;
+	margin: 0 auto;
+	
+}
 .error .imgs{
-	position: absolute;
-	margin-left:400px;
-	width:600px;
+	padding: 0;
+	width:100%;
 	height: 100%;
 }
