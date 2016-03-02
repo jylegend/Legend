@@ -35,10 +35,12 @@
 ul{list-style: none;}
 ul li{float: left}
 
-.btn{
+
+
+a.btn{
 	display: block;
 	min-width: 120px;
-	max-width: 140px;
+	padding: 0;
 	color: #bdbdbd;
 	font-size:16px;
 	border: none;

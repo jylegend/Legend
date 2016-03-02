@@ -6,8 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
-var err404 = require('./routes/404');
+// var users = require('./routes/users');
 var app = express();
 
 // view engine setup
@@ -22,9 +21,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
-app.use('/404', err404);
+app.get('/index', routes.index);
+app.get('/login',routes.login);
+app.post('/login',routes.dologin);
+app.get('/users', routes.users);
+app.get('404', routes.error404);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -41,7 +42,9 @@ if (app.get('env') === 'development') {
     res.status(err.status || 500);
     res.render('404', {
       message: err.message,
-      error: err
+      error: err,
+      title:'页面不见了'
+
     });
   });
 }
@@ -52,7 +55,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('404', {
     message: err.message,
-    error: {}
+    error: {},
+    title:'页面不见了'
   });
 });
 
