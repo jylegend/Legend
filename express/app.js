@@ -21,11 +21,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/index', routes.index);
+app.get('/', routes.index);
 app.get('/login',routes.login);
 app.post('/login',routes.dologin);
 app.get('/users', routes.users);
-app.get('404', routes.error404);
+// app.get('404', routes.error404);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -46,6 +46,7 @@ if (app.get('env') === 'development') {
       title:'页面不见了'
 
     });
+    console.log(err);
   });
 }
 

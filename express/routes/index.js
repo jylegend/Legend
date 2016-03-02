@@ -13,11 +13,11 @@ exports.index=function(req,res){
 	res.render('index',{title: '美在于心'});
 }
 
-exports.users=function(){
+exports.users=function(req,res){
 	res.render('users',{title: '个人中心'});
 }
 
-exports.login=function(){
+exports.login=function(req,res){
 	res.render('login',{title: '登录信息'});
 }
 
