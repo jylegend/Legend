@@ -92,6 +92,18 @@ nodejs 使用非阻塞式I/O(异步式I/O)针对所有的I/O操作不采用阻�
 安装node-inspector 调试工具,安装命令：npm install -g node-inspector
 
 nodejs教程：http://ourjs.com/detail/529ca5950cb6498814000005
+
+改变模板页面引擎：
+  默认项目安装是使用jade模板引擎
+  （jade：客户端支持 代码高可读 灵活的缩进 块展开 Mixins 静态包含 属性改写
+        安全，默认代码是转义的 运行时和编译时上下文错误报告 命令行下编译jade模板
+        HTML5 模式 (使用 !!! 5 文档类型) 在内存中缓存(可选) 合并动态和静态标签类
+        可以通过 filters 修改树 模板继承 原生支持 Express JS 通过each  枚举对象、数组甚至是不能枚举的对象 块注释）
+  替换jade引擎为ejs引擎：终端输入 express -e
+  修改页面后缀.ejs为.html，在app.js中：
+  var ejs=require('ejs');
+  app.engine('.html',ejs.__express);
+  app.set('view engine','html');
  
  
  
