@@ -27,17 +27,17 @@ exports.dologin=function(req,res){
 		password:'123456'
 	}
 	var err='';
-	if(req.body.username!=user.username )
+	if(req.body.username==user.username && req.body.password==user.password)
 	{
-		err='用户名错误';
-		return;
+		res.redirect('/users');
+		res.end();
 	}
-	if(req.body.password!=user.password)
-	{
-		err='密码错误';
-		return;
-	}
-	res.redirect('/users',{title:'个人中心',errorMsg:err});
+	console.log(req.body.password);
+	// res.send({err:'用户名或密码输入错误，请重新输入'});
+	// 
+	// res.redirect('/login');
+	// res.render('login',fu)
+	res.end();
 }
 
 

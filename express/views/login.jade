@@ -8,6 +8,7 @@ html
     //引入通用头部文件
     include header.jade
     .container-fluid
+       
         form(method='post').form-horizontal
             fieldset
                 legend 用户登录
@@ -21,6 +22,7 @@ html
                         input(type='password',name='password',)#password.input-xlarge
                 .form-actions
                     button(type='submit').btn.btn-primary 登录
+    
     block content  
     //引入通用尾部文件
     include footer.jade
