@@ -200,3 +200,25 @@ var reg = new RegExp(/^([a-z]+)\s([0-9]{4})$/);
 reg.test(/**/);
 
 各种css3按钮效果：http://www.shejidaren.com/css-hover-style.html
+
+
+空格：$('parent childchild')表示获取parent下的所有的childchild节点（所有的子孙）。
+
+大于号：$('parent > child')表示获取parent下的所有child的儿子( 第一代)。
+
+加号：$('pre + nextbrother')表示获得pre节点的下一个兄弟节点，相当于next()方法
+
+波浪号：$('pre ~ brother')表示获取pre节点的后面的所有兄弟节点，相当于nextAll()方法。
+
+
+post、get的区别
+→ get的参数会显示在浏览器地址栏中，而post的参数不会显示在浏览器地址栏中；
+→ 使用post提交的页面在点击【刷新】按钮的时候浏览器一般会提示“是否重新提交”，而get则不会；
+→ 用get的页面可以被搜索引擎抓取，而用post的则不可以；
+→ 用post可以提交的数据量非常大，而用get可以提交的数据量则非常小(2k)，受限于网页地址的长度。
+→ 用post可以进行文件的提交，而用get则不可以。
+
+Application 、Cookie和 Session 两种会话有什么不同？
+→ Application是用来存取整个网站全局的信息，而Session是用来存取与具体某个访问者关联的信息。Cookie是保存在客户端的，机密信息不能保存在Cookie中，只能放小数据；
+Session是保存在服务器端的，比较安全，可以放大数据。
+→ 谈到Session的时候就侃Session和Cookie的关系：Cookie中的SessionId。客户第一次发送请求给服务器，此时服务器产生一个唯一的sessionID，并返回给客户端(通过cookie)

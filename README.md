@@ -44,6 +44,9 @@ origin https://github.com/yuquan0821/demo.git (push)
 
 1. git remote rm origin
 2. git remote add origin git@github.com:yuquan0821/demo.git
-3. git push origin 
+3. git push origin
+
+MongoDB:分布式文档存储数据库,介于关系数据库(RBDMS)和非关系数据库(NoSql)之间的产品 ,文件存储格式为BSON（一种JSON的扩展）。
+
 
 
