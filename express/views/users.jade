@@ -7,8 +7,12 @@ html
   body  
     //引入通用头部文件
     include header.jade
+    .main 
+        ul
+            each item in message
+                li 信息： #{item.Name}
     欢迎光临.....
-    block content  
+    block content
     //引入通用尾部文件
     include footer.jade
 

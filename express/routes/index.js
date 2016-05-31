@@ -1,5 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var mongoose=require("mongoose");
+var models=require("../mongodb");
+var User=models.User;
+mongoose.connect("mongodb://127.0.0.1:27017/legend");
 
 /* GET home page. */
 // router.get('/', function(req, res, next) {
@@ -11,10 +15,17 @@ var router = express.Router();
 
 exports.index=function(req,res){
 	res.render('index',{title: '美在于心'});
+
 }
 
 exports.users=function(req,res){
-	res.render('users',{title: '个人中心'});
+	User.find(function(err,doc){
+		res.render('users',{
+			title:'个人中心',
+			message:doc
+		})
+	});
+
 }
 
 exports.login=function(req,res){
@@ -22,16 +33,16 @@ exports.login=function(req,res){
 }
 
 exports.dologin=function(req,res){
-	var user={
-		username:'admin',
-		password:'123456'
-	}
+	var user=new User({
+		Name:req.body.username,
+		Age:25,
+		Email:"787113172@qq.com"
+	});
+	user.save();
+	
 	var err='';
-	if(req.body.username==user.username && req.body.password==user.password)
-	{
-		res.redirect('/users');
-		res.end();
-	}
+	res.redirect('/users');
+	res.end();
 	console.log(req.body.password);
 	// res.send({err:'用户名或密码输入错误，请重新输入'});
 	// 
