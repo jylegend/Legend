@@ -104,6 +104,17 @@ nodejs教程：http://ourjs.com/detail/529ca5950cb6498814000005
   var ejs=require('ejs');
   app.engine('.html',ejs.__express);
   app.set('view engine','html');
+
+
+  Sublime_Text_3 添加jade插件步骤：
+  访问https://packagecontrol.io/installation将Package Control 下面的代码复制到程序view->console里面；然后打开package control，搜索Install Package，然后搜索Jade安装；
+
+  Express添加Mongodb：
+   1.安装Mongodb文件到本地，命令行进入到安装目录下面的bin文件夹，运行命令：$ mongod.exe --dbpath d:/data/db(事先新建好指定文件夹)，此时已经打开Mongodb服务，在浏览器输入：127.0.0.1:27017可以看到Mongodb服务输出的信息；
+   2.打开另外一个命令提示符（管理员权限打开），输入命令:$ mongo 然后回车，此时可以看到Mongodb版本信息，以及数据库文件（详情菜鸟教程）；
+   3.命令行进入Express项目所在路径，输入命令:$ npm install --save Mongoose,等待一段时间，Package.json已经加入Mongoose版本信息。
+  
+
  
  
  
