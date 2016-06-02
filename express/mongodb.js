@@ -6,6 +6,6 @@ var _User=new Schema({
 	Name:String,
 	Age:Number,
 	email:String,
-	password:String
+	PassWord:String
 });
-exports.User=mongodb.model('User',_User);
+exports.User=mongodb.model('User',_User); 

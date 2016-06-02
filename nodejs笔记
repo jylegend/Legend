@@ -114,6 +114,19 @@ nodejs教程：http://ourjs.com/detail/529ca5950cb6498814000005
    2.打开另外一个命令提示符（管理员权限打开），输入命令:$ mongo 然后回车，此时可以看到Mongodb版本信息，以及数据库文件（详情菜鸟教程）；
    3.命令行进入Express项目所在路径，输入命令:$ npm install --save Mongoose,等待一段时间，Package.json已经加入Mongoose版本信息。
 
+Mongo：
+1.show dbs ---显示所有数据库
+2.use legend ---使用当前数据库
+  2.1 db.legend.find()---查找所有数据
+  2.2 db.legend.remove({})---参数必传，删除当前库下面的所有数据
+3.show collections ---显示所有当前库下面的表
+  3.1 db.users.find()---查找所有数据
+  3.2 db.users.remove({})---参数必传，删除当前库下面的所有数据
+  
+ npm run start >>app.log 终端输入此命令，生成app.log文件；
+
+ Express添加日志log4js,终端命令：npm install --save log4js
+
 
   
 
