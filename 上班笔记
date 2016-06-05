@@ -299,6 +299,7 @@ String s = new String("xyz");创建了几个String Object? 两个对象，一个
 上。
 
 session(viewstate) 简单，但易丢失
+iis中由于有进程回收机制，系统繁忙的话Session会丢失，可以用Sate Server或SQL Server数据库的方式存储Session不过这种方式比较慢，而且无法捕获Session的END事件。
 application 全局
 cookie 简单，但可能不支持，可能被伪造
 input type="hidden" 简单，可能被伪造
@@ -315,3 +316,8 @@ String是固定不变的，在进行字符串连接的时候是新建一个字�
 StringBuilder是可变的，不用生成中间对象，拼接字符串比较多，或字符串的长度比较长时有较高的效率。
 StringBuilder的内存空间不够也要扩容，如果分配的空间远远大于需要量，也很浪费
 所以，初始化StringBuilder的时候最好根据需要设置容量，避免浪费
+
+SQL SREVER中向一个表中插入了新数据，如何快捷的得到自增量字段的当前值：
+INSERT INTO jobs (job_desc,min_lvl,max_lvl) VALUES ('Accountant',12,125) SELECT @@IDENTITY AS 'Identity'
+
+1．存储过程是一段预先编译好的T-SQL代码,可以被重复调用,触发器是在进行表更改操作时才执行功能． 2．触发器执行的时间较长,性能较低;存储过程重用性好,执行性能较高． 3．触发器多用在完善表的数据完整性和约束;存储过程多用在方便重复使用数据库操作．
