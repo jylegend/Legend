@@ -1,0 +1,135 @@
+一、安装
+官网http://expressjs.com/
+express4.X的有一些变化，4.x版本中将命令工具单独分出来了(https://github.com/expressjs/generator),所有要先按装express-generator，否则创建项目时，会提示express命令没找到
+
+[plain] view plain copy print?在CODE上查看代码片派生到我的代码片
+$ npm install -g express-generator #需先安装express-generator  
+  
+$ npm install -g express  
+  
+$ express -V  #验证是否安装成功  
+
+二、创建项目
+
+[plain] view plain copy print?在CODE上查看代码片派生到我的代码片
+$ express myfirstexpress # express的默认模版采用jade，若需要ejs模版支持，加上-e选项，即 express -e myfirstexpress  
+$ cd myfirstexpress  
+  
+$ ls  
+app.js  bin  package.json  public  routes  views #项目的目录结构   
+
+三、运行项目
+
+[plain] view plain copy print?在CODE上查看代码片派生到我的代码片
+$ npm install #需要等待一段时间，因为需要获取很多的库文件  
+  
+$ npm start  
+  
+> myfirstexpress@0.0.1 start /root/myfirstexpress  
+> node ./bin/www  
+
+四、访问第一个express项目
+
+浏览器中输入 http://你的IP:3000
+
+显示
+[html] view plain copy print?在CODE上查看代码片派生到我的代码片
+Express  
+  
+Welcome to Express  
+说明express安装成功
+
+
+cmd进入c盘：c:
+创建文件夹命令：mkdir myapp，创建一个myapp文件夹，然后cd myapp进入此文件夹
+
+安装Express,步骤：
+1.官网http://expressjs.com/，express4.X的有一些变化，4.x版本中将命令工具单独分出来了(https://github.com/expressjs/generator),
+所有要先按装express-generator，否则创建项目时，会提示express命令没找到。
+cmd命令：
+   01：npm install -g express-generator #需先安装express-generator
+   02：npm install -g express 
+   03：express -V  #验证是否安装成功
+2.创建项目
+cmd命令：
+   01：express myfirstexpress # express的默认模版采用jade，若需要ejs模版支持，加上-e选项，即 express -e myfirstexpress 
+   02：cd myfirstexpress
+3：运行项目
+ cmd命令：
+  01：npm install #需要等待一段时间，因为需要获取很多的库文件 
+  02：npm start  
+  输出：
+  > myfirstexpress@0.0.1 start /root/myfirstexpress  
+  > node ./bin/www
+4：查看
+ 浏览器中输入 http://你的IP:3000 如：127.0.0.1:3000
+5.停止项目
+cmd命令：Ctrl+c按2次
+
+nodejs 开启http服务，更改文件需要手动关闭开启此服务，很麻烦，使用supervisor
+可以自动侦听文件是否发生变化，并自动开启关闭http服务。
+配置安装supervisor命令：npm install -g supervisor
+
+命令提示符：cls清除页面  进入D盘 只要输入D: 进入的D盘的Node文件夹，只要输入D:/>CD \Node 等等
+
+nodejs 使用非阻塞式I/O(异步式I/O)针对所有的I/O操作不采用阻塞的策略。
+
+同步式 I/O（阻塞式） 
+利用多线程提供吞吐量 通过事件片分割和线程调度利用多核CPU 需要由操作系统调度多线程使用多核CPU
+难以充分利用 CPU 资源 内存轨迹大，数据局部性弱 符合线性的编程思维 
+
+异步式 I/O（非阻塞式）
+单线程即可实现高吞吐量 通过功能划分利用多核CPU 可以将单进程绑定到单核CPU 可以充分利用CPU 资源 内存轨迹小，数据局部性强 不符合传统编程思维
+
+什么是模块？
+ 模块是nodejs的基本组成部分，文件和模块是一一对应的，一个文件就是一个模块。（js文件、json文件，txt文件。。。）
+
+ exports： 是模块公开的接口 本身仅仅是一个普通的空对象，
+ 即{}，它专门用来声明接口，本质上是通过它为模块闭包的内部建立了一个有限的访问接口
+
+ require： 用于从外部获取一个模块的接口，即所获取模块的 exports 对象。
+
+安装node-inspector 调试工具,安装命令：npm install -g node-inspector
+
+nodejs教程：http://ourjs.com/detail/529ca5950cb6498814000005
+
+改变模板页面引擎：
+  默认项目安装是使用jade模板引擎
+  （jade：客户端支持 代码高可读 灵活的缩进 块展开 Mixins 静态包含 属性改写
+        安全，默认代码是转义的 运行时和编译时上下文错误报告 命令行下编译jade模板
+        HTML5 模式 (使用 !!! 5 文档类型) 在内存中缓存(可选) 合并动态和静态标签类
+        可以通过 filters 修改树 模板继承 原生支持 Express JS 通过each  枚举对象、数组甚至是不能枚举的对象 块注释）
+  替换jade引擎为ejs引擎：终端输入 express -e
+  修改页面后缀.ejs为.html，在app.js中：
+  var ejs=require('ejs');
+  app.engine('.html',ejs.__express);
+  app.set('view engine','html');
+
+
+  Sublime_Text_3 添加jade插件步骤：
+  访问https://packagecontrol.io/installation将Package Control 下面的代码复制到程序view->console里面；然后打开package control，搜索Install Package，然后搜索Jade安装；
+
+  Express添加Mongodb：
+   1.安装Mongodb文件到本地，命令行进入到安装目录下面的bin文件夹，运行命令：$ mongod.exe --dbpath d:/data/db(事先新建好指定文件夹)，此时已经打开Mongodb服务，在浏览器输入：127.0.0.1:27017可以看到Mongodb服务输出的信息；
+   2.打开另外一个命令提示符（管理员权限打开），输入命令:$ mongo 然后回车，此时可以看到Mongodb版本信息，以及数据库文件（详情菜鸟教程）；
+   3.命令行进入Express项目所在路径，输入命令:$ npm install --save Mongoose,等待一段时间，Package.json已经加入Mongoose版本信息。
+
+Mongo：
+1.show dbs ---显示所有数据库
+2.use legend ---使用当前数据库
+  2.1 db.legend.find()---查找所有数据
+  2.2 db.legend.remove({})---参数必传，删除当前库下面的所有数据
+3.show collections ---显示所有当前库下面的表
+  3.1 db.users.find()---查找所有数据
+  3.2 db.users.remove({})---参数必传，删除当前库下面的所有数据
+  
+ npm run start >>app.log 终端输入此命令，生成app.log文件；
+
+ Express添加日志log4js,终端命令：npm install --save log4js
+
+
+  
+
+ 
+ 
+ 
