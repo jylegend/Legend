@@ -315,3 +315,5 @@ String是固定不变的，在进行字符串连接的时候是新建一个字�
 StringBuilder是可变的，不用生成中间对象，拼接字符串比较多，或字符串的长度比较长时有较高的效率。
 StringBuilder的内存空间不够也要扩容，如果分配的空间远远大于需要量，也很浪费
 所以，初始化StringBuilder的时候最好根据需要设置容量，避免浪费
+
+http://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&mid=2651550895&idx=1&sn=d1821187aac86f547af19da75f6c2c29&scene=0#wechat_redirect 前端css技术。
