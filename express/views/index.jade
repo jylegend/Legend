@@ -1,14 +1,40 @@
 doctype html
 html
-  head
-    title=title
-    //公共文件区
-    include config.jade
-  body 
-    //引入通用头部文件
-    include header.jade
-    
-    block content
-
-    //引入通用尾部文件
-    include footer.jade
+    head
+        title=title
+        link(rel='stylesheet', href='/stylesheets/css3.css',media='screen')
+        link(rel='stylesheet', href='/stylesheets/index.css')
+        //公共文件区
+        include config.jade
+body
+    .mainarea
+        .welcome
+            #robot
+                .piston
+                   .rotator
+                   .block W
+                       .arm
+                .piston
+                   .rotator
+                   .block E
+                       .arm
+                .piston
+                   .rotator
+                   .block L
+                       .arm
+                .piston
+                   .rotator
+                   .block C
+                       .arm
+                .piston
+                   .rotator
+                   .block O
+                       .arm
+                .piston
+                   .rotator
+                   .block M
+                       .arm
+                .piston
+                   .rotator
+                   .block E
+                       .arm
